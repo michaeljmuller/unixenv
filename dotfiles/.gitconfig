@@ -1,0 +1,6 @@
+[user]
+    name = Michael Muller
+    email = mike@themullers.org
+
+[core]
+    excludesfile = ~/.gitignore

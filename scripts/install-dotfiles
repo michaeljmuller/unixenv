@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ ! -d ~/.unixenv ]; then 
+  echo "FAIL! these tools must be installed at ~/.unixenv"
+fi
+
+pushd ~/.unixenv/dotfiles > /dev/null
+
+for i in .*
+do
+
+  # skip directories and emacs working files
+  if [ -d $i ] || [[ $i == .#* ]] || [[ $i == *~ ]]
+  then
+    continue
+  fi
+
+  # if a symlink to the file already exists in the home dir, then skip it
+  if [ -L ~/$i ]
+  then
+    echo "$i is already installed; skipping"
+    continue
+  fi
+
+  echo "installing $i"
+
+  # if the file already exists, then back it up (stomping the old backup, if one existed)
+  if [ -e ~/$i ]
+  then
+    mv ~/$i ~/$i-backup
+  fi
+
+  ln -s ~/.unixenv/dotfiles/$i ~/$i
+
+done
+
+popd > /dev/null
