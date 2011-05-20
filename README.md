@@ -1,4 +1,4 @@
-I have to have my dot files in github, or I'm not cool, or so my office mate tells me.
+I have to have my dot files in github, or I'm not cool, or so my officemate tells me.
 
 My repo needs a README, or github yells at me.
 
