@@ -9,6 +9,7 @@ fi
 
 export PATH=~/.unixenv/scripts:$PATH
 alias emacs='emacs -nw'
+export EDITOR='emacs -nw'
 
 # host-specific configuration should go here
 if [ -f ~/.bash_profile_local ]; then
